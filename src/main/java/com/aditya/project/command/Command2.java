@@ -24,6 +24,6 @@ public class Command2 implements Callable<Integer> {
     @Override
     public Integer call() {
         log.info("Successfully executed command2 with y : {}", y);
-        return null;
+        return 0;
     }
 }
