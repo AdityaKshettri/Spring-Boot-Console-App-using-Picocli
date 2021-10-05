@@ -1,6 +1,7 @@
 package com.aditya.project.command;
 
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 import picocli.CommandLine.Parameters;
@@ -12,11 +13,12 @@ import java.util.concurrent.Callable;
 @Data
 @Slf4j
 @Component
+@EqualsAndHashCode(callSuper = true)
 @Command(
         name = "command2",
         mixinStandardHelpOptions = true
 )
-public class Command2 implements Callable<Integer> {
+public class Command2 extends CommonParams implements Callable<Integer> {
 
     @Parameters(description = "positional params")
     private List<String> y;
